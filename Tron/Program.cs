@@ -63,23 +63,26 @@ class Program
                 Console.WriteLine("Current score: {0} - {1}", firstPlayerScore, secondPlayerScore);
                 ResetGame();
             }
-            if (firstPlayerLoses)
+            else // Fix the bug after draw game!
             {
-                secondPlayerScore++;
-                Console.WriteLine();
-                Console.WriteLine("Game over");
-                Console.WriteLine("Second player wins!!!");
-                Console.WriteLine("Current score: {0} - {1}", firstPlayerScore, secondPlayerScore);
+                if (firstPlayerLoses)
+                {
+                    secondPlayerScore++;
+                    Console.WriteLine();
+                    Console.WriteLine("Game over");
+                    Console.WriteLine("Second player wins!!!");
+                    Console.WriteLine("Current score: {0} - {1}", firstPlayerScore, secondPlayerScore);
+                    ResetGame();
+                }
+                if (secondPlayerLoses)
+                {
+                    firstPlayerScore++;
+                    Console.WriteLine();
+                    Console.WriteLine("Game over");
+                    Console.WriteLine("First player wins!!!");
+                    Console.WriteLine("Current score: {0} - {1}", firstPlayerScore, secondPlayerScore);
                 ResetGame();
-            }
-            if (secondPlayerLoses)
-            {
-                firstPlayerScore++;
-                Console.WriteLine();
-                Console.WriteLine("Game over");
-                Console.WriteLine("First player wins!!!");
-                Console.WriteLine("Current score: {0} - {1}", firstPlayerScore, secondPlayerScore);
-                ResetGame();
+                }
             }
 
 
